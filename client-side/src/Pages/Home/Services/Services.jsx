@@ -20,7 +20,7 @@ const Services = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#F6F6F6" }}>
+    <Box sx={{ backgroundColor: "#F6F6F6", marginTop: "-160px" }}>
       <Container sx={{ py: 5 }}>
         {loading ? (
           <Preloader></Preloader>

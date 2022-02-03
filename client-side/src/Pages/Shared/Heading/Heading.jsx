@@ -19,7 +19,6 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import useAuth from "../../../hooks/useAuth";
-import "./Heading.css";
 
 function HideOnScroll(props) {
   const { children, window } = props;
@@ -69,16 +68,31 @@ export default function Heading(props) {
     }
   });
 
+  const activeNavbarStyle = {
+    backgroundColor: "#e7e7e7",
+    color: "black",
+  };
+
+  const inactiveNavbarStyle = {
+    color: "white",
+    backgroundColor: "transparent",
+  };
+
+  const activeColor = {
+    color: "black",
+  };
+
+  const inactiveColor = {
+    color: "white",
+  };
+
   return (
     <React.Fragment>
       <CssBaseline />
       <HideOnScroll {...props}>
         <AppBar
-          style={{
-            color: "black",
-            boxShadow: 0,
-          }}
-          className={navbar ? "activeNavbar" : "inactiveNavbar"}
+          style={navbar ? activeNavbarStyle : inactiveNavbarStyle}
+          sx={{ boxShadow: 0 }}
         >
           <Container>
             <Toolbar disableGutters>
@@ -166,15 +180,24 @@ export default function Heading(props) {
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                 <Button
                   onClick={() => history.push("/")}
-                  sx={{ my: 2, color: "black", display: "block" }}
+                  sx={{ my: 2, display: "block" }}
+                  style={navbar ? activeColor : inactiveColor}
                 >
                   Home
                 </Button>
                 {user.email ? (
                   <>
                     <Button
-                      sx={{ my: 2, color: "black", display: "block" }}
+                      sx={{ my: 2, display: "block" }}
+                      onClick={() => history.push("/myOrders")}
+                      style={navbar ? activeColor : inactiveColor}
+                    >
+                      My Order
+                    </Button>
+                    <Button
+                      sx={{ my: 2, display: "block" }}
                       onClick={handleLogOut}
+                      style={navbar ? activeColor : inactiveColor}
                     >
                       Logout
                     </Button>

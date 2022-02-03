@@ -44,6 +44,8 @@ const Order = () => {
       number,
       ticket,
       itemOrdered: service,
+      status: "Pending",
+      departureTime: "Approximately 10:30 PM",
     };
 
     axios
@@ -244,6 +246,8 @@ const Order = () => {
                     loop
                     muted
                     style={{ margin: "0 auto" }}
+                    width="100%"
+                    height="400px"
                   />
                   <Box
                     sx={{

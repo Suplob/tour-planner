@@ -4,6 +4,7 @@ import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./CustomRoutes/PrivateRoute";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import MyOrder from "./Pages/MyOrder/MyOrder";
 import Order from "./Pages/Order/Order";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Heading from "./Pages/Shared/Heading/Heading";
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <PrivateRoute path="/order/:serviceId">
               <Order></Order>
+            </PrivateRoute>
+            <PrivateRoute path="/myOrders">
+              <MyOrder></MyOrder>
             </PrivateRoute>
           </Switch>
           <Footer />
