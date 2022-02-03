@@ -7,9 +7,11 @@ import styled from "styled-components";
 import { CircularProgress, Container, Grid, Typography } from "@mui/material";
 import HeadingText from "../Shared/HeadingText/HeadingText";
 import Preloader from "../Shared/Preloader/Preloader";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Button from "../Shared/Button/Button";
+import smoothscroll from "smoothscroll-polyfill";
+import { HashLink } from "react-router-hash-link";
 
 const MyOrder = () => {
   const [orders, setOrders] = useState([]);
@@ -19,6 +21,9 @@ const MyOrder = () => {
 
   const { user } = useAuth();
   const history = useHistory();
+
+  smoothscroll.polyfill();
+  window.__forceSmoothScrollPolyfill__ = true;
 
   const handleDelete = (id) => {
     setDeleteLoading(id);
@@ -209,9 +214,13 @@ const MyOrder = () => {
             >
               Your order list is empty :(
             </Typography>
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <HashLink
+              to="/home#services"
+              smooth
+              style={{ textDecoration: "none" }}
+            >
               <Button>ORDER NOW</Button>
-            </Link>
+            </HashLink>
           </Box>
         )}
       </Container>

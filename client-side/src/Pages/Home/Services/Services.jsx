@@ -20,8 +20,8 @@ const Services = () => {
   }, []);
 
   return (
-    <Box sx={{ backgroundColor: "#F6F6F6", marginTop: "-160px" }}>
-      <Container sx={{ py: 5 }} id="services">
+    <Box sx={{ backgroundColor: "#F6F6F6" }}>
+      <Container sx={{ py: 5 }}>
         {loading ? (
           <Preloader></Preloader>
         ) : (
@@ -30,6 +30,7 @@ const Services = () => {
             <Typography
               variant="h3"
               sx={{ fontFamily: "Cormorant Garamond", mb: 2 }}
+              id="services"
             >
               Trending, Best <strong>Selling Tours</strong> And <br /> Fun
               Destinations

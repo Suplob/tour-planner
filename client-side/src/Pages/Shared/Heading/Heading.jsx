@@ -149,8 +149,19 @@ export default function Heading(props) {
                   {user.email ? (
                     <>
                       <MenuItem onClick={handleCloseNavMenu}>
-                        <Typography textAlign="center" onClick={handleLogOut}>
-                          Logout
+                        <Typography
+                          textAlign="center"
+                          onClick={() => history.push("/myOrders")}
+                        >
+                          My Order
+                        </Typography>
+                      </MenuItem>
+                      <MenuItem onClick={handleCloseNavMenu}>
+                        <Typography
+                          textAlign="center"
+                          onClick={() => history.push("/allOrders")}
+                        >
+                          Manage All Order
                         </Typography>
                       </MenuItem>
                     </>
@@ -206,7 +217,8 @@ export default function Heading(props) {
                   <>
                     <Button
                       onClick={() => history.push("/login")}
-                      sx={{ my: 2, color: "black", display: "block" }}
+                      sx={{ my: 2, display: "block" }}
+                      style={navbar ? activeColor : inactiveColor}
                     >
                       Login
                     </Button>
