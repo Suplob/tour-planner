@@ -18,6 +18,9 @@ const Button = ({ children }) => {
     &:hover {
       background-color: #ac8d4f;
     }
+    &:disabled {
+      cursor: no-drop;
+    }
   `;
   return <PrimaryBtn>{children}</PrimaryBtn>;
 };

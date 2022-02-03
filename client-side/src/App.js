@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <PrivateRoute path="/order">
+            <PrivateRoute path="/order/:serviceId">
               <Order></Order>
             </PrivateRoute>
           </Switch>

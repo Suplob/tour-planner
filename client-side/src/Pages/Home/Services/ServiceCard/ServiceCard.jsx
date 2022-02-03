@@ -90,7 +90,7 @@ const ServiceCard = ({ data }) => {
             }}
           >
             <Price>$ {data.price}</Price>
-            <Box onClick={() => history.push("/order")}>
+            <Box onClick={() => history.push(`/order/${data._id}`)}>
               <Button>ORDER NOW</Button>
             </Box>
           </Box>
