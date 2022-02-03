@@ -196,10 +196,10 @@ export default function Heading(props) {
                     </Button>
                     <Button
                       sx={{ my: 2, display: "block" }}
-                      onClick={handleLogOut}
+                      onClick={() => history.push("/allOrders")}
                       style={navbar ? activeColor : inactiveColor}
                     >
-                      Logout
+                      Manage All Orders
                     </Button>
                   </>
                 ) : (

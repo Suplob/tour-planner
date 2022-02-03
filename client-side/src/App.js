@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import PrivateRoute from "./CustomRoutes/PrivateRoute";
+import AllOrder from "./Pages/AllOrder/AllOrder";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import MyOrder from "./Pages/MyOrder/MyOrder";
@@ -30,6 +31,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/myOrders">
               <MyOrder></MyOrder>
+            </PrivateRoute>
+            <PrivateRoute path="/allOrders">
+              <AllOrder></AllOrder>
             </PrivateRoute>
           </Switch>
           <Footer />

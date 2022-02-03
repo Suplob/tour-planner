@@ -1,13 +1,17 @@
-import { Container, Grid, Typography, Box } from "@mui/material";
+import { Container, Box } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import Button from "../../Shared/Button/Button";
 import { useHistory } from "react-router-dom";
+import smoothscroll from "smoothscroll-polyfill";
+import { HashLink } from "react-router-hash-link";
 
 const Banner = () => {
   const matches = useMediaQuery("(min-width:600px)");
   const history = useHistory();
+  smoothscroll.polyfill();
+  window.__forceSmoothScrollPolyfill__ = true;
 
   const backgroundStyle = {
     background:
@@ -63,12 +67,14 @@ const Banner = () => {
             </H1>
             <br />
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Button
-                style={{ margin: "0 auto" }}
-                onClick={() => history.push("/home#services")}
-              >
-                ORDER NOW
-              </Button>
+              <HashLink to="/home#services" smooth>
+                <Button
+                  style={{ margin: "0 auto" }}
+                  onClick={() => history.push("/home#services")}
+                >
+                  ORDER NOW
+                </Button>
+              </HashLink>
             </Box>
           </HeroText>
         </Container>
