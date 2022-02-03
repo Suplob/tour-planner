@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
+import PrivateRoute from "./CustomRoutes/PrivateRoute";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
+import Order from "./Pages/Order/Order";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Heading from "./Pages/Shared/Heading/Heading";
 
@@ -22,6 +24,9 @@ function App() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
+            <PrivateRoute path="/order">
+              <Order></Order>
+            </PrivateRoute>
           </Switch>
           <Footer />
         </Router>
